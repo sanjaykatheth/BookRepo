@@ -1,12 +1,23 @@
 package com.example.Book.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 
+@Entity
+@Table(name="BookTable")
 public class BookEntity {
+
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bookId;
-	
+
 	private String BookName;
 
 	private String Description;
@@ -51,5 +62,5 @@ public class BookEntity {
 		BookName = bookName;
 		Description = description;
 	}
-	
+
 }
